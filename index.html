@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRICXABHI Live Match</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #1f1f1f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #333;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: #007bff;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .channel-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .nav-right {
+            display: flex;
+            gap: 8px;
+        }
+        .btn {
+            background-color: #2b2b2b;
+            color: #ffffff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+        .btn-tg {
+            background-color: #0088cc;
+        }
+        .video-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            position: relative;
+        }
+        video {
+            width: 100%;
+            max-height: 80vh;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="nav-left">
+            <span class="dot"></span>
+            <span class="channel-title">CRICXABHI Live</span>
+        </div>
+        <div class="nav-right">
+            <button class="btn" onclick="location.reload()">Reload</button>
+            <button class="btn" onclick="toggleFullScreen()">Fullscreen</button>
+            <a href="https://t.me/cric_by_abhi" target="_blank" class="btn btn-tg">
+                <span>Telegram</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <video id="myVideo" controls autoplay>
+            <source src="YOUR_VIDEO_OR_STREAM_LINK.mp4" type="video/mp4">
+            तुम्हारा ब्राउज़र वीडियो टैग को सपोर्ट नहीं करता।
+        </video>
+    </div>
+
+    <script>
+        function toggleFullScreen() {
+            var elem = document.getElementById("myVideo");
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) {
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) {
+                    elem.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
